@@ -1,3 +1,8 @@
+package main;
+
+import box.Box;
+import test.Man;
+
 public class Main {
     public static void main(String[] args) {
         Box box1 = new Box(10);
@@ -10,5 +15,10 @@ public class Main {
         double volumeSum = box1.volume() + box3.volume();
         System.out.println("box1 + box3 = " + volumeSum);
         box4.showVolume();
+
+        Man man1 = new Man("Ilia", 32);
+        System.out.println(man1.getAge());
+
+
     }
 }

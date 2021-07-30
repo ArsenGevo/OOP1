@@ -1,34 +1,35 @@
-public class Box {
-    double width;
-    double height;
-    double length;
+package box;
 
-    Box(double width, double height, double length) {
+public class Box {
+    private double width;
+    private double height;
+    private double length;
+
+   private Box(double width, double height, double length) {
         this.width = width;
         this.height = height;
         this.length = length;
     }
 
-    Box(double size) {
+   private Box(double size) {
         width = size;
         height = size;
         length = size;
     }
 
-    Box() {
+   private Box() {
         width = 0;
         height = 0;
         length = 0;
     }
 
-    Box(Box box) {
+   private Box(Box box) {
         this.width = box.width;
         this.height = box.height;
         this.length = box.length;
     }
 
-    //Ваше решение может отличаться, я сделал так: если мы просто у новой коробки укажем длину и ширину и высоту равную сумме двух коробок,
-    //то получившаяся коробка по объему однозначно получится больше суммы тех двух коробок.
+    //сумма полей передаваемых объектов
     Box(Box box1, Box box2) {
         this.width = box1.width + box2.width;
         this.length = box1.length + box2.length;
@@ -49,15 +50,15 @@ public class Box {
         return new Box(this.width + box.width, this.height + box.height, this.length + box.length);
     }
 
-    double volume() {
+    public double volume() {
         return width * height * length;
     }
 
-    void showVolume() {
+    public void showVolume() {
         System.out.println(volume());
     }
 
-    int compare(Box box) {
+    public int compare(Box box) {
         double thisVolume = volume();
         double boxVolume = box.volume();
         int result;
